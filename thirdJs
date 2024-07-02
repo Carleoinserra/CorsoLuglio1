@@ -1,0 +1,26 @@
+
+// i numeri
+
+let num = 8;
+let num2 = 10;
+
+console.log(num + num2);
+
+// operatori 
+
+console.log(num * num2);
+
+console.log(num / num2);
+
+console.log(num2 % num);
+
+// stringhe
+
+let parola = "Ciao mondo";
+console.log(parola);
+
+// ho assengnato alla variabile saluto il prompt richiesto all'utente
+let saluto = prompt("Scrivi il tuo nome: ");
+
+// ho stampato la stinga benvenuto concatenandola con il risultato del prompt
+console.log("Benvenuto " + saluto);
