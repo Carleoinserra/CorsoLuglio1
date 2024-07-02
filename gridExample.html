@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#container {
+
+display: grid;
+grid-template-rows: 1fr 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-areas:
+"it1 it1 it1 it1"
+"it2 it2 it3 it3"
+"it2 it2 it4 it4"
+"it5 it5 it5 it5"
+;
+}
+#it1 {
+    background-color: aqua;
+    grid-area: it1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#it2 {
+
+background-color: beige;
+grid-area: it2;
+}
+
+#it3 {
+
+background-color: rgb(23, 95, 95);
+grid-area: it3;
+}
+
+#it4 {
+
+background-color: rgb(144, 11, 122);
+grid-area: it4;
+}
+#it5 {
+
+background-color: rgb(246, 86, 65);
+grid-area: it5;
+}
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+  <div id = "container">
+<div id = "it1"><img src="divina.jpeg" alt="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla non cum reprehenderit molestias suscipit eius rem, corrupti velit aperiam ratione sed tenetur nostrum saepe recusandae labore, at inventore quae. Cum!</div>
+<div id = "it2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla non cum reprehenderit molestias suscipit eius rem, corrupti velit aperiam ratione sed tenetur nostrum saepe recusandae labore, at inventore quae. Cum!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla non cum reprehenderit molestias suscipit eius rem, corrupti velit aperiam ratione sed tenetur nostrum saepe recusandae labore, at inventore quae. Cum!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla non cum reprehenderit molestias suscipit eius rem, corrupti velit aperiam ratione sed tenetur nostrum saepe recusandae labore, at inventore quae. Cum!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla non cum reprehenderit molestias suscipit eius rem, corrupti velit aperiam ratione sed tenetur nostrum saepe recusandae labore, at inventore quae. Cum!
+    <img src="panino1.jpeg" alt="">
+</div>
+<div id = "it3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla non cum reprehenderit molestias suscipit eius rem, corrupti velit aperiam ratione sed tenetur nostrum saepe recusandae labore, at inventore quae. Cum!</div>
+<div id = "it4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla non cum reprehenderit molestias suscipit eius rem, corrupti velit aperiam ratione sed tenetur nostrum saepe recusandae labore, at inventore quae. Cum!</div>
+<div id = "it5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla non cum reprehenderit molestias suscipit eius rem, corrupti velit aperiam ratione sed tenetur nostrum saepe recusandae labore, at inventore quae. Cum!</div>
+
+
+
+
+
+  </div>  
+</body>
+</html>
