@@ -45,6 +45,53 @@ grid-area: it4;
 background-color: rgb(246, 86, 65);
 grid-area: it5;
 }
+@media screen and (max-width: 600px) {
+ 
+    #container {
+
+display: grid;
+grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-areas:
+
+"it1 it1 it1 it1"
+"it2 it2 it2 it2"
+"it3 it3 it3 it3"
+"it4 it4 it4 it4"
+"it5 it5 it5 it5"
+;
+}
+#it1 {
+    background-color: aqua;
+    grid-area: it1;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+#it2 {
+
+background-color: beige;
+grid-area: it2;
+}
+
+#it3 {
+
+background-color: rgb(23, 95, 95);
+grid-area: it3;
+}
+
+#it4 {
+
+background-color: rgb(144, 11, 122);
+grid-area: it4;
+}
+#it5 {
+
+background-color: rgb(246, 86, 65);
+grid-area: it5;
+}
+    
+
+}
 
 
 
