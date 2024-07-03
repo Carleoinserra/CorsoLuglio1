@@ -1,0 +1,52 @@
+// tipi di variabili
+let num1 = 5;
+var num2 = 7;
+const num3 = 9;
+
+
+// riassegnamento di una variabile
+
+num1 = 10;
+
+//tipizazzione debole
+//num1 = "topolino";
+
+
+let nome = "carlo";
+
+//console.log(num1);
+
+
+// concatenazione di stringhe
+//console.log("Il tuo nome è " + nome);
+
+// variabile booleana
+let bool = true;
+//console.log(bool);
+
+let bool1 = 5 > 6;
+bool1 = 5 == 6;
+bool1 = 5 < 6;
+
+// dichiarazione senza assegnamento
+let var_1;
+
+var_1 = 5;
+
+//console.log(var_1)
+
+let var_2 = var_1;
+console.log(var_2);
+
+
+// operatori booleani
+var_2 = num1 > 0 && num1 < 100;
+var_2 = num1 > 10 && num1 < 100;
+var_2 = num1 > 10 || num1 < 100;
+console.log(var_2);
+
+let par1 = prompt("Scrivi una parola: ");
+let par2 = prompt("Scrivi una parola: ");
+
+let var_3 = par1 == par2;
+console.log(var_3);
