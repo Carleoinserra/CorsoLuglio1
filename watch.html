@@ -12,9 +12,30 @@ img {
 
     </style>
 <script>
+
 function scegli(){
 
     let watch = document.getElementById("orol").value;
+    let categ = document.getElementById("categ").value;
+    let prezzo = 0;
+    if (watch == "sector"){
+        prezzo = 200;
+    }
+    if (watch == "rolex"){
+        prezzo = 1000;
+    }
+    if (watch == "swatch"){
+        prezzo = 120;
+    }
+
+    if (categ == "usato") {
+        prezzo = prezzo - (prezzo * 30 / 100);
+    }
+    if (categ == "usatoG") {
+        prezzo = prezzo - (prezzo * 20 / 100);
+    }
+
+    
     
     if (watch == "sector"){
         document.getElementById("sector").style.display = "block";
@@ -22,21 +43,24 @@ function scegli(){
         document.getElementById("swatch").style.display = "none";
 
         let nodo = document.getElementById("result");
-        nodo.textContent = "Il prezzo dell'orologio è 200 euro";
+        nodo.textContent = "Il prezzo dell'orologio è: " + prezzo;
+        
+
+
     }
     else if (watch == "rolex"){
         document.getElementById("rolex").style.display = "block";
         document.getElementById("sector").style.display = "none";
         document.getElementById("swatch").style.display = "none";
         let nodo = document.getElementById("result");
-        nodo.textContent = "Il prezzo dell'orologio è 1000 euro";
+        nodo.textContent = "Il prezzo dell'orologio è: " + prezzo;
     }
     else if (watch == "swatch"){
         document.getElementById("rolex").style.display = "none";
         document.getElementById("sector").style.display = "none";
         document.getElementById("swatch").style.display = "block";
         let nodo = document.getElementById("result");
-        nodo.textContent = "Il prezzo dell'orologio è 120 euro";
+        nodo.textContent = "Il prezzo dell'orologio è: " + prezzo;
     }
 
 }
@@ -51,7 +75,14 @@ function scegli(){
    <option value = "swatch">swatch</option>
    <option value = "rolex">rolex</option>
 
-    </select>
+    </select><br><br>
+    <h3>Scegli la tipologia</h3>
+    <select  id="categ">
+        <option value = "usato">usato</option>
+        <option value = "usatoG">usato garantito</option>
+        <option value = "nuovo">nuovo</option>
+     
+         </select><br><br>
     <button onclick="scegli()">Scegli</button>
 <hr>
 <hr>
