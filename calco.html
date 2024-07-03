@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+
+// creiamo la funzione somma che prende i numeri ottenuti dall'input
+// e li somma tra loro
+function somma(){
+    let num1 = parseInt(document.getElementById("num1").value);
+    let num2 = parseInt(document.getElementById("num2").value);
+    // richiamiamo il nodo dove stampare il risultato
+    let nodo = document.getElementById("result");
+    nodo.textContent = (num1 + num2);
+}
+function sott(){
+    let num1 = parseInt(document.getElementById("num1").value);
+    let num2 = parseInt(document.getElementById("num2").value);
+    // richiamiamo il nodo dove stampare il risultato
+    let nodo = document.getElementById("result");
+    nodo.textContent = (num1 - num2);
+}
+</script>
+</head>
+<body>
+    <!-- creiamo un sito che ha due campi di input per inserire due numeri
+    ogni input ha associato un id con il quale andremo a recuperare il valore
+    scritto dall'utente nello script
+    -->
+  Inserisci un numero: <input type = "number" id = "num1">  <br>
+  Inserisci un numero: <input type = "number" id = "num2">  <br>
+  <!--
+    Creiamo un bottone e associamo all'evento onclic (quando si clicca sul bottone)
+    una funzione che calcola la somma dei numeri
+  -->
+  <button onclick = "somma()">Somma</button>
+  <button onclick = "sott()">Sott</button>
+  <!--
+    creiamo un paragrafo vuoto con id result che andremo a riempire con il valore della funzione
+  -->
+  <hr>
+  <p id = "result"></p>
+</body>
+</html>
