@@ -24,17 +24,23 @@ class dip {
         this.img = img;
     }
 }
+// quando viene caricata la pagina viene fatta partire la funzione gestore load
 window.onload = gestoreLoad;
 
 function gestoreLoad(){
-
+     // andiamo a creare un nuovo array vuoto di dipendenti
     let listaD = new Array();
+    // prendiamo i due bottoni e associaziomo all'evento on click le funzioni 
+    // inserisci e visualizza
     let btn = document.getElementById("btn");
     let btn1 = document.getElementById("btn1");
     btn.onclick = inserisci;
     btn1.onclick = visualizza;
+    // come variabile globale andiamo a prendere il nodo con id result
     let nodo = document.getElementById("result");
-
+// nella funzione inserisci otteniamo i valori da input
+// andiamo a creare una nuova istanza di dip con i valori inseriti dall'utente
+// aggiungiamo il dipendente all'array
     function inserisci(){
 let nome = document.getElementById("nome").value;
 let mansione = document.getElementById("mans").value;
@@ -45,7 +51,8 @@ listaD.push(d1);
 alert("dipendente aggiunto con successo");
 
     }
-
+// nella funzione visualizza per ogni elemento presente nell'array
+// andiamo a creare una card con i dati propri di ogni oggetto dipendente
     function visualizza(){
         remove();
 
@@ -68,7 +75,7 @@ alert("dipendente aggiunto con successo");
             let nodoText = document.createElement("p");
             nodoText.className = "card-text";
             
-            nodoText.textContent = listaD[i].mansione + " " + listaD[i].stipendio;
+            nodoText.textContent = "ruolo: " + listaD[i].mansione + " cachet: " + listaD[i].stipendio;
             nodoCardBody.appendChild(nodoText);
             nodo.appendChild(nodoCard);
 
