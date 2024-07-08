@@ -6,19 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-         function remove(){
+         function remove(nodo){
     
-    var nodo = document.getElementById("result");
-    
-    while (nodo.firstChild) {
-
-        nodo.removeChild(nodo.firstChild);
-    }
-   
-}
-function removeS(){
-    
-    var nodo = document.getElementById("nome1");
+    var nodo = nodo;
     
     while (nodo.firstChild) {
 
@@ -26,6 +16,7 @@ function removeS(){
     }
    
 }
+
 class dip {
     constructor(nome, mansione, stipendio, img){
         this.nome = nome;
@@ -65,7 +56,7 @@ let listaD = new Array();
     let nodo = document.getElementById("result");
 function popolaSelect(){
     let nodoSelect = document.getElementById("nome1");
-
+    remove(nodoSelect);
     for (let i = 0; i < listaD.length; i++) {
         let nodoOption = document.createElement("option");
         nodoOption.textContent = listaD[i].nome;
@@ -90,7 +81,8 @@ let img = document.getElementById("img").value;
 let d1 = new dip(nome, mansione, stip, img);
 listaD.push(d1);
 alert("dipendente aggiunto con successo");
-removeS();
+var nodoS = document.getElementById("nome1");
+
 popolaSelect();
 
 
@@ -98,7 +90,8 @@ popolaSelect();
 // nella funzione visualizza per ogni elemento presente nell'array
 // andiamo a creare una card con i dati propri di ogni oggetto dipendente
     function visualizza(){
-        remove();
+
+        remove(nodo);
         
 
         for (let i = 0; i < listaD.length; i++){
