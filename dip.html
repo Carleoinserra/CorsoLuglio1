@@ -16,6 +16,16 @@
     }
    
 }
+function removeS(){
+    
+    var nodo = document.getElementById("nome1");
+    
+    while (nodo.firstChild) {
+
+        nodo.removeChild(nodo.firstChild);
+    }
+   
+}
 class dip {
     constructor(nome, mansione, stipendio, img){
         this.nome = nome;
@@ -53,7 +63,23 @@ let listaD = new Array();
     btn2.onclick = cambia;
     // come variabile globale andiamo a prendere il nodo con id result
     let nodo = document.getElementById("result");
-// nella funzione inserisci otteniamo i valori da input
+function popolaSelect(){
+    let nodoSelect = document.getElementById("nome1");
+
+    for (let i = 0; i < listaD.length; i++) {
+        let nodoOption = document.createElement("option");
+        nodoOption.textContent = listaD[i].nome;
+        nodoOption.value = listaD[i].nome;
+        nodoSelect.appendChild(nodoOption);
+    }
+}
+popolaSelect();
+
+
+
+
+
+    // nella funzione inserisci otteniamo i valori da input
 // andiamo a creare una nuova istanza di dip con i valori inseriti dall'utente
 // aggiungiamo il dipendente all'array
     function inserisci(){
@@ -64,6 +90,9 @@ let img = document.getElementById("img").value;
 let d1 = new dip(nome, mansione, stip, img);
 listaD.push(d1);
 alert("dipendente aggiunto con successo");
+removeS();
+popolaSelect();
+
 
     }
 // nella funzione visualizza per ogni elemento presente nell'array
@@ -141,7 +170,7 @@ alert("dipendente aggiunto con successo");
  <div id = "result"></div>
  <br><br>
  <hr>
- Inserisci nome dipendente da modificare <input type = "text" id = "nome1"><br><br>
+ Inserisci nome dipendente da modificare <select id = "nome1"> </select><br><br>
  Inserisci la nuova immagine <input type = "text" id = "img1"><br><br>
  <button id = "btn2">Cambia</button>
 </body>
