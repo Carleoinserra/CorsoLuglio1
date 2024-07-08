@@ -34,8 +34,10 @@ function gestoreLoad(){
     // inserisci e visualizza
     let btn = document.getElementById("btn");
     let btn1 = document.getElementById("btn1");
+    let btn2 = document.getElementById("btn2");
     btn.onclick = inserisci;
     btn1.onclick = visualizza;
+    btn2.onclick = cambia;
     // come variabile globale andiamo a prendere il nodo con id result
     let nodo = document.getElementById("result");
 // nella funzione inserisci otteniamo i valori da input
@@ -86,6 +88,28 @@ alert("dipendente aggiunto con successo");
     
         }
     }
+// cambia è una funzione che serve per modificare un'immagine
+// attraverso il nome dell'artista viene modifica l'immagine relativa
+// se il nome dell'artista non viene trovato la funzione invia un messaggio
+    function cambia(){
+        let ok = 0;
+        let nome = document.getElementById("nome1").value;
+        let img = document.getElementById("img1").value;
+        for (let i = 0; i < listaD.length; i++){
+            if (listaD[i].nome == nome) {
+                listaD[i].img = img;
+                ok = 1;
+            }
+        }
+
+        if (ok == 0){
+            alert("Artista non trovato");
+        }
+        if (ok > 0){
+            alert("Immagine modificata con successo");
+        }
+
+    }
 
 }
 
@@ -101,5 +125,10 @@ alert("dipendente aggiunto con successo");
  <hr><hr>
  <button id = "btn1">Visualizza</button>
  <div id = "result"></div>
+ <br><br>
+ <hr>
+ Inserisci nome dipendente da modificare <input type = "text" id = "nome1"><br><br>
+ Inserisci la nuova immagine <input type = "text" id = "img1"><br><br>
+ <button id = "btn2">Cambia</button>
 </body>
 </html>
