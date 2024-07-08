@@ -28,8 +28,21 @@ class dip {
 window.onload = gestoreLoad;
 
 function gestoreLoad(){
-     // andiamo a creare un nuovo array vuoto di dipendenti
-    let listaD = new Array();
+
+// andiamo a creare un nuovo array vuoto di dipendenti
+let listaD = new Array();
+     
+       let d1 = new dip("Ben Stiller", "attore", 90000, "ben.webp");
+       let d2 = new dip("Adam Sendler", "attore", 90000, "adam.webp");
+       let d3 = new dip("Jennifer Aniston","attrice", 90000, "jennifer.webp");
+       listaD.push(d1);
+       listaD.push(d2);
+       listaD.push(d3);
+     
+
+
+
+     
     // prendiamo i due bottoni e associaziomo all'evento on click le funzioni 
     // inserisci e visualizza
     let btn = document.getElementById("btn");
@@ -57,6 +70,7 @@ alert("dipendente aggiunto con successo");
 // andiamo a creare una card con i dati propri di ogni oggetto dipendente
     function visualizza(){
         remove();
+        
 
         for (let i = 0; i < listaD.length; i++){
              
