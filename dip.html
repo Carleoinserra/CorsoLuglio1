@@ -31,14 +31,22 @@ window.onload = gestoreLoad;
 function gestoreLoad(){
 
 // andiamo a creare un nuovo array vuoto di dipendenti
-let listaD = new Array();
-     
+
+
+listaD = JSON.parse(localStorage.getItem('dipendenti'));
+
+
+if (listaD.length == 0) { 
+    listaD = new Array();
        let d1 = new dip("Ben Stiller", "attore", 90000, "ben.webp");
        let d2 = new dip("Adam Sendler", "attore", 90000, "adam.webp");
        let d3 = new dip("Jennifer Aniston","attrice", 90000, "jennifer.webp");
        listaD.push(d1);
        listaD.push(d2);
-       listaD.push(d3);
+       listaD.push(d3); }
+
+
+
      
 
 
@@ -66,7 +74,12 @@ function popolaSelect(){
 }
 popolaSelect();
 
+function salvaDati(){
+    
+    localStorage.setItem('dipendenti', JSON.stringify(listaD));
+    alert("lista aggiornata");
 
+}
 
 
 
@@ -84,6 +97,7 @@ alert("dipendente aggiunto con successo");
 var nodoS = document.getElementById("nome1");
 
 popolaSelect();
+salvaDati();
 
 
     }
