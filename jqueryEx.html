@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+    window.onload = gestoreLoad;
+
+    function gestoreLoad(){
+
+        /*     
+Prendiamo l'elemento con id container e gli aggiungiamo un paragrafo
+con del testo
+        */
+$('#container').html('<p> Benvenuti oggi parleremo di jquery</p>');
+     /*     
+Selezioniamo il bottone con id myButton e gli assegnamo una funzione
+all'evento onclick (l'alert)
+        */ 
+
+    $('#myButton').click(function() {
+    alert('Hai cliccato il pulsante!');
+});
+
+let ok = false;
+
+
+
+$('#btn').click(function(){
+    if (ok == false){
+    $('#nascondi').hide();
+    ok = true; }
+    else if (ok){
+        
+        $('#nascondi').show();
+        ok = false;
+    }
+});
+
+
+}
+
+
+
+
+
+
+
+    
+    </script>
+</head>
+<body>
+ <div id = "container">
+
+ </div> 
+ <button id = "myButton">Clicca</button>
+
+ <p id = "nascondi">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid cumque eius molestias repellendus eveniet totam amet est nobis, ipsam nemo qui tenetur aliquam in doloremque delectus voluptatibus porro voluptates voluptas.
+ </p>
+ <button id = "btn">m/n</button>
+</body>
+</html>
