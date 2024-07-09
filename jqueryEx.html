@@ -8,8 +8,22 @@
 
     <script>
     window.onload = gestoreLoad;
-
+    
     function gestoreLoad(){
+
+        function getRandomColor() {
+            let letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        let bgColor = getRandomColor();
+            let textColor = getRandomColor();
+            document.body.style.backgroundColor = bgColor;
+            document.body.style.color = textColor;
 
         /*     
 Prendiamo l'elemento con id container e gli aggiungiamo un paragrafo
