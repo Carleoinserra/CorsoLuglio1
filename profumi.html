@@ -105,7 +105,8 @@ function gestoreLoad(){
         let valore = document.getElementById(lista[i].nome).value;
         if (valore != 0) {
             let testo = document.createElement("p");
-            testo.textContent = valore + " " + lista[i].nome;
+            testo.textContent = valore + " " + lista[i].nome + " al prezzo di: " + (lista[i].prezzo * valore) + " euro";
+            prezzo += lista[i].prezzo * valore;
             
             
             let spazio = document.createElement("br");
@@ -115,6 +116,10 @@ function gestoreLoad(){
         }
         
     }
+
+    let prezzoTotale = document.createElement("h3");
+    prezzoTotale.textContent = "Il prezzo totale da pagare è " + prezzo + " euro";
+    nodoR.appendChild(prezzoTotale);
 
     
 
