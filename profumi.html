@@ -29,6 +29,8 @@ class articolo {
 window.onload = gestoreLoad;
 
 function gestoreLoad(){
+    let btn = document.getElementById("btn");
+    btn.onclick = ordina;
 
     let lista = new Array();
 
@@ -40,6 +42,7 @@ function gestoreLoad(){
     lista.push(a2);
     lista.push(a3);
     lista.push(a4);
+    
     let nodo = document.getElementById("result");
     for (let i = 0; i < lista.length; i++){
              
@@ -88,6 +91,37 @@ function gestoreLoad(){
     
     
    }
+  function ordina(){
+
+    let prezzo = 0;
+    let listaOrdini = [];
+    let nodoR = document.getElementById("riepilogo");
+    let testo1 = document.createElement("p");
+    testo1.textContent = "Hai ordinato";
+    nodoR.appendChild(testo1);
+    
+    for (let i = 0; i < lista.length; i++) {
+
+        let valore = document.getElementById(lista[i].nome).value;
+        if (valore != 0) {
+            let testo = document.createElement("p");
+            testo.textContent = valore + " " + lista[i].nome;
+            
+            
+            let spazio = document.createElement("br");
+            testo.appendChild(spazio);
+            nodoR.appendChild(testo);
+
+        }
+        
+    }
+
+    
+
+    
+  }
+
+
     } 
 
 
@@ -98,11 +132,16 @@ function gestoreLoad(){
     </script>
 </head>
 <body>
-  <div id = "container">
+  <div class = "container">
     <div class="card-group" id = "result">
-
+        
         </div>
+        <br>
 
+        <button type="button" class="btn btn-success" id = "btn">Ordina</button>
+        <hr>
+        <hr>
+        <div id = "riepilogo"></div>
   </div>  
 </body>
 </html>
