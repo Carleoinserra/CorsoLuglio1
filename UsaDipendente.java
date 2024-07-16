@@ -23,7 +23,9 @@ public class UsaDipendente {
 		int scelta = 0;
 		
 		do {
-			System.out.println("1 per inserire un nuovo dipedente 2 per stampare 0 per terminare");
+			System.out.println("1 per inserire un nuovo dipedente 2 per stampare"
+					+ "3 per rimuovere un elemento 0 per terminare"+
+					"4 pre ricercare un dipedente");
 			scelta = input.nextInt();
 			
 			if (scelta == 1) {
@@ -41,11 +43,37 @@ public class UsaDipendente {
 				
 				for (dipendente d3: listaD) {
 					System.out.println(d3);
+				}}
+				
+				else if (scelta == 3) {
+					
+					System.out.println("la posizione");
+					int pos = input.nextInt();
+					listaD.remove(pos);
+				}
+			
+				else if (scelta == 4) {
+					System.out.println("Inserisci il nome del dipedente: ");
+					String nomeD = input.next();
+					boolean trovato = false;
+					for (dipendente d3: listaD) {
+						
+						if (d3.getNome().equals(nomeD)) {
+							System.out.println(d3);
+							trovato = true;
+						}
+						
+						
+					}
+					
+					if (trovato == false) {
+						System.out.println("Nessun dipendente trovato con quel nome");
+					}
 				}
 				
 				
 				
-			}
+			
 			
 			
 			
