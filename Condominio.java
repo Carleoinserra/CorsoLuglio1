@@ -56,6 +56,32 @@ for (Appartamento a1: lista) {
 				+ " misure appartamenti " + misure + " m2 appartamenti " + "\n"+ listaA; 
 		
 	}
+	
+	public int speseCondominio() {
+		int somma = 0;
+		for (int i = 0; i < lista.size(); i++) {
+			
+			if (lista.get(i).getNumeroI() <= 2) {
+				
+				somma+= 50;
+			}
+			else if (lista.get(i).getNumeroI() > 2) {
+				somma+= 70;
+			}
+			
+			if (lista.get(i).getSuperficie() >= 100) {
+				
+				somma+= 50;
+			}
+			else if (lista.get(i).getSuperficie() >= 100) {
+				
+				somma+=70;
+			}
+		}
+		
+		return somma;
+	}
+	
 	}
 
 	
