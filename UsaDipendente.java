@@ -25,7 +25,7 @@ public class UsaDipendente {
 		do {
 			System.out.println("1 per inserire un nuovo dipedente 2 per stampare"
 					+ "3 per rimuovere un elemento 0 per terminare"+
-					"4 pre ricercare un dipedente");
+					"4 pre ricercare un dipedente 5 per la somma degli stipendi");
 			scelta = input.nextInt();
 			
 			if (scelta == 1) {
@@ -70,7 +70,20 @@ public class UsaDipendente {
 						System.out.println("Nessun dipendente trovato con quel nome");
 					}
 				}
+			
+				else if (scelta == 5) {
 				
+					int sommaS = 0;
+				
+					for (dipendente d3: listaD) {
+					
+						sommaS += d3.getStipendio();
+					
+				}
+				
+					System.out.println("La somma degli stipendi è: " + sommaS);
+				
+				}
 				
 				
 			
