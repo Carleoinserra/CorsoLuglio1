@@ -46,9 +46,34 @@ public class Appartamento {
 	public String visualizza() {
 		
 		return "nome proprietario: " + nomeP + " numero inquilini: " + numeroI +
-				" superficie " + superficie + " m2 piano " + piano + "ID casa: "
+				" superficie " + superficie + " m2 piano " + piano + 
+				"Spesa condominiale mensile " + calcolaSomma() + " euro" +
+				" ID casa: "
 		+ id;
 		
+	}
+	
+	public int calcolaSomma() {
+		int somma = 0;
+		
+		if (this.numeroI <= 2) {
+			
+			somma+= 50;
+		}
+		else if (this.numeroI > 2) {
+			somma+= 70;
+		}
+		
+		if (this.superficie >= 100) {
+			
+			somma+= 50;
+		}
+		else if (this.superficie >= 100) {
+			
+			somma+=70;
+		}
+		
+		return somma;
 	}
 
 	

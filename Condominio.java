@@ -61,22 +61,7 @@ for (Appartamento a1: lista) {
 		int somma = 0;
 		for (int i = 0; i < lista.size(); i++) {
 			
-			if (lista.get(i).getNumeroI() <= 2) {
-				
-				somma+= 50;
-			}
-			else if (lista.get(i).getNumeroI() > 2) {
-				somma+= 70;
-			}
-			
-			if (lista.get(i).getSuperficie() >= 100) {
-				
-				somma+= 50;
-			}
-			else if (lista.get(i).getSuperficie() >= 100) {
-				
-				somma+=70;
-			}
+			somma += lista.get(i).calcolaSomma();
 		}
 		
 		return somma;
