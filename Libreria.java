@@ -47,7 +47,7 @@ public class Libreria {
 				
 				for (int i = 0; i < libri.size(); i++) {
 					
-					if (libri.get(i).getTitolo().equals(titolo)) {
+					if ((titolo).equalsIgnoreCase( libri.get(i).getTitolo())) {
 						
 						spesa+= libri.get(i).getPrezzo();
 						trovato = true;
