@@ -1,3 +1,10 @@
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 public class UsaHitParade {
@@ -8,6 +15,13 @@ public class UsaHitParade {
 		Scanner input = new Scanner (System.in);
 		
 		HitParade h1 = new HitParade();
+		
+		
+		
+		
+		
+		
+		
 		int scelta = 0;
 		
 		do {
@@ -61,6 +75,57 @@ public class UsaHitParade {
 				h1.cerca(autore);
 				
 			}
+			
+			else if (scelta == 6) {
+				
+				Scanner input4 = new Scanner (System.in);
+				System.out.println("Inserisci il nome del file che vuoi salvare:");
+				
+				String nome = input4.nextLine();
+				
+				try {
+					ObjectOutputStream out =
+					new ObjectOutputStream ( new BufferedOutputStream (
+					new FileOutputStream (nome + ".dat" )));
+					out . writeObject (h1);
+					out . close ();
+					} catch ( IOException e) {
+					System . out . println (" ERRORE di I/O");
+					System . out . println (e );
+					}
+				
+				
+				
+				
+			}
+			
+			else if (scelta == 7) {
+				Scanner input5 = new Scanner (System.in);
+				System.out.println("digita il nome del file da aprire:");
+				
+				String nome = input5.nextLine();
+				
+				try {
+					// notare le classi degli stream di byte
+					ObjectInputStream in =
+					new ObjectInputStream ( new BufferedInputStream (
+					new FileInputStream (nome + ".dat" )));
+					h1 = (HitParade) in.readObject();
+					in . close ();
+					} catch ( ClassNotFoundException e) {
+					// se il file non contiene un oggetto ....
+					System . out . println (" PROBLEMA ( manca oggetto nel file )");
+					System . out . println (e );
+					} catch ( IOException e) {
+					System . out . println (" ERRORE di I/O");
+					System . out . println (e );
+					}	
+				
+				
+				
+			}
+			
+			
 			
 			
 			

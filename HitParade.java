@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class HitParade {
+public class HitParade implements Serializable {
 
 	
 	ArrayList <Canzone> listaC;

@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public class Canzone {
+public class Canzone implements Serializable {
 
 	private String titolo;
 	private String autore;
