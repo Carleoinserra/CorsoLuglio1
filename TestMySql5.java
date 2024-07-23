@@ -24,7 +24,9 @@ public class TestMySql5 {
         
         do {
         Scanner input = new Scanner (System.in);
-        System.out.println("Inserisci 1 per aggiungere 2 per visualizzare 3 per ricercare un prodotto i prodotti 0 per terminare: ");
+        System.out.println("Inserisci 1 per aggiungere 2 per visualizzare 3 per ricercare un prodotto i prodotti"
+        		
+        		+ " 4 per aggiungere pezzi a un prodtto 5 per eliminare un prodotto 0 per terminare: ");
         
         scelta = input.nextInt();
         
@@ -118,7 +120,7 @@ public class TestMySql5 {
     	 
     	 String query1 = "SELECT * FROM prodotti WHERE prezzo = (?)";
 			// andiamo a ricercare un prodotto all'interno del database
-			System.out.println("inserisci il prodotto da ricercare");
+			System.out.println("inserisci il prezzo da ricercare");
 			// chiediamo all'utente di inserire il nome del prodotto
 			Scanner input3 = new Scanner (System.in);
 			double prezzoI = input3.nextDouble();
@@ -155,7 +157,85 @@ public class TestMySql5 {
 		}
         
         
-        }}
+        }
+     
+     else if (scelta == 4) {
+    		
+			// chiediamo all'utente di inserire il nome del prodotto
+			Scanner input3 = new Scanner (System.in);
+			System.out.println("inserisci il nome del prodotto");
+			String nome = input3.next();
+			System.out.println("inserisci i pezzi del prodotto");
+			int qnt = input3.nextInt();
+			
+    	 
+    	String query1 = "UPDATE prodotti  SET quantita = quantita + (?) WHERE nome= (?) ";
+    	try (Connection conn = DriverManager.getConnection(url + dbName, user, password);
+    		    PreparedStatement stmt = conn.prepareStatement(query1))
+    			
+    			{   // andiamo a definire il segnaposto nello statement
+    				stmt.setInt(1, qnt);
+    				stmt.setString(2, nome);
+    				int rows = stmt.executeUpdate();
+   				 if (rows > 0) {
+   					 // se vengono tovati dati, vengono stampati
+   		                System.out.println("Prodotto aggiornato con successo");
+   			
+   		}
+    				
+    	
+     }
+    	catch (SQLException e) {
+    	     // Gestione dell'eccezione per la connessione al database o l'esecuzione della query
+    	     System.out.println("Errore durante la ricerca dei dati nella tabella 'prodotti':");
+    	     e.printStackTrace();
+    	 }  
+    			
+     
+        
+        
+        }
+     else if (scelta == 5) {
+ 		
+			// chiediamo all'utente di inserire il nome del prodotto
+			Scanner input3 = new Scanner (System.in);
+			System.out.println("inserisci il nome del prodotto");
+			String nome = input3.next();
+			String query1 = "DELETE FROM prodotti WHERE nome= (?)";
+ 	 
+
+ 	try (Connection conn = DriverManager.getConnection(url + dbName, user, password);
+ 		    PreparedStatement stmt = conn.prepareStatement(query1))
+ 			
+ 			{   // andiamo a definire il segnaposto nello statement
+ 				stmt.setString(1, nome);
+ 				
+ 				int rows = stmt.executeUpdate();
+				 if (rows > 0) {
+					 // se vengono tovati dati, vengono stampati
+		                System.out.println("Prodotto aggiornato con successo");
+			
+		}
+ 				
+ 	
+  }
+ 	catch (SQLException e) {
+ 	     // Gestione dell'eccezione per la connessione al database o l'esecuzione della query
+ 	     System.out.println("Errore durante la ricerca dei dati nella tabella 'prodotti':");
+ 	     e.printStackTrace();
+ 	 }  
+ 			
+  
+     
+     
+     }
+        
+        
+        
+        
+        
+        
+        }
     
     
     while (scelta != 0);
