@@ -24,7 +24,7 @@ public class TestMySql5 {
         
         do {
         Scanner input = new Scanner (System.in);
-        System.out.println("Inserisci 1 per aggiungere 2 per visualizzare i prodotti 0 per terminare: ");
+        System.out.println("Inserisci 1 per aggiungere 2 per visualizzare 3 per ricercare un prodotto i prodotti 0 per terminare: ");
         
         scelta = input.nextInt();
         
@@ -110,7 +110,52 @@ public class TestMySql5 {
              System.out.println("Errore durante la lettura dei dati dalla tabella 'prodotti':");
              e.printStackTrace();
          }
-     } }
+     }
+     
+     else if (scelta == 3) {
+    	 
+    	 ArrayList <Prod> listaPrezzo = new ArrayList<>();
+    	 
+    	 String query1 = "SELECT * FROM prodotti WHERE prezzo = (?)";
+			// andiamo a ricercare un prodotto all'interno del database
+			System.out.println("inserisci il prodotto da ricercare");
+			// chiediamo all'utente di inserire il nome del prodotto
+			Scanner input3 = new Scanner (System.in);
+			double prezzoI = input3.nextDouble();
+			// creiamo una connessione e andiamo a dichiarare uno statement di tipo prepared
+			try (Connection conn = DriverManager.getConnection(url + dbName, user, password);
+		    PreparedStatement stmt = conn.prepareStatement(query1))
+			
+			{   // andiamo a definire il segnaposto nello statement
+				stmt.setDouble(1, prezzoI);
+				// andaimo ad assegnare il risultato della query a un result set
+				ResultSet rs = stmt.executeQuery();
+				 while (rs.next()) {
+					 // se vengono tovati dati, vengono stampati
+		                int id = rs.getInt("id");
+		                String nome = rs.getString("nome");
+		                double prezzo = rs.getDouble("prezzo");
+		                int quantita = rs.getInt("quantita");
+		                Prod prod1 = new Prod(id, nome, prezzo, quantita);
+		                listaPrezzo.add(prod1);
+			
+		}
+		
+	}catch (SQLException e) {
+     // Gestione dell'eccezione per la connessione al database o l'esecuzione della query
+     System.out.println("Errore durante la ricerca dei dati nella tabella 'prodotti':");
+     e.printStackTrace();
+ }  
+			
+			
+			
+		for (Prod p1: listaPrezzo) {
+			
+			System.out.println(p1);
+		}
+        
+        
+        }}
     
     
     while (scelta != 0);
